@@ -1,0 +1,49 @@
+\documentclass[12pt]{article}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textwidth}{6.5in}
+\setlength{\parindent}{0in}
+\setlength{\parskip}{\baselineskip}
+\setlength{\headsep}{3pt}
+
+\usepackage{amsmath,amsfonts,amssymb}
+
+\title{Homework 1}
+
+\begin{document}
+
+Elena Yang \\
+Homework 1 \\
+Math 305 \\
+September 10, 2020
+
+\hrulefill
+
+\section{Problem 1}
+The problem states that we should determine if the following statement is true: \\
+A 5 gallon container and a 13 gallon container can be used to accurately measure off 2 gallons of liquid.
+
+The claim is true. The shortest procedure would be to fill the 5 gallon container and pour all the contents into the 13 gallon container, and repeat this action twice so you are left with an empty 5 gallon container and a 13 gallon container with 10 gallons of water. Then fill the 5 gallon container once again, and pour the contents into the 13 gallon container until it is full. Then you would have 2 gallons of water remaining in the 5 gallon container.
+
+We can write an equation to represent the problem:
+\begin{equation*}
+    13x + 5y = 2
+\end{equation*}
+If $x$ or $y$ is negative, that means we are emptying a container of $x$ or $y$ gallons respectively. If $x$ or $y$ is positive, that means we fill the container.
+The goal is to find some combination of $x$, $y$ such that the equation holds true. 
+We can apply the extended Euclidean Algorithm to solve the equation:
+\begin{align*}
+    \label{Forwards} 
+    13 = 5(2) + 3\\
+    5 = 3(1) + 1
+\end{align*}
+Then work through the Algorithm backwards to find coefficient that solve the original problem:
+\begin{equation*}
+\begin{split}
+2 & =  5 - 3(1)\\
+ & =  5 - (13 - 5(2))\\
+ & = 5(3) + 13(-1)\\
+\end{split}
+\end{equation*}
+We see that the 5 gallon container has a coefficient of 3, so we would fill that container 3 times, and the 13 gallon container has a coefficient of -1, so we would empty that container 1 time.
+\end{document}

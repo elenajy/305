@@ -1,0 +1,121 @@
+\documentclass[12pt]{article}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textwidth}{6.5in}
+\setlength{\parindent}{0in}
+\setlength{\parskip}{\baselineskip}
+\setlength{\headsep}{3pt}
+
+\usepackage{amsmath,amsfonts,amssymb}
+
+\title{Homework 1}
+
+\begin{document}
+
+Elena Yang \\
+Homework 2 \\
+Math 305 \\
+September 24, 2020
+
+\hrulefill
+
+\section{Problem 1}
+The problem states:
+\begin{center}
+'Write the number 1000 as a sum of distinct Fibonacci numbers in as many different ways as possible, while adhering to the restriction that the summands must appear in increasing order in the representing sum.'
+\end{center}
+The Fibonacci numbers less than 1000 are:
+\begin{center}
+0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987
+\end{center}
+To begin our list, we can start using the largest number, in this case 987, and then continue through the list backwards. While compiling the list, we make sure to keep in mind uniqueness. We can double the values we have the list by adding 0, but for purposes of this answer we will not be considering 0.
+\begin{itemize}
+  \item 13 + 987
+  \item 5 + 8 + 987
+  \item 2 + 3 + 8 + 987
+  \item 13 + 377 + 610
+  \item 5 + 8 + 377 + 610
+  \item 2 + 3 + 8 + 377 + 610
+  \item 13 + 144 + 233 + 610
+  \item 5 + 8 + 144 + 233 + 610
+  \item 2 + 3 + 8 + 89 + 144 + 233 + 610
+  \item 13 + 55 + 89 + 233 + 610
+  \item 5 + 8 + 55 + 89 + 233 + 610
+  \item 2 + 3 + 8 + 55 + 89 + 233 + 610
+  \item 13 + 21 + 34 + 89 + 233 + 610
+  \item 5 + 8 + 21 + 34 + 89 + 233 + 610
+  \item 2 + 3 + 8 + 21 + 34 + 89 + 233 + 610
+\end{itemize}
+The process above was to write the summation in the simplest way possible, and then write all variations where a value in the sum can be written as the sum of the previous two Fibonacci numbers (not allowing for overlap/allowing for uniqueness). There are no summations that do not include 610 or 987 as the sum of all the Fibonacci numbers less than 610 is less than 1000. When we get to the point where we cannot break any more numbers into the sum of two smaller Fibonacci numbers, we know we are done. Thus there are \boxed{15} summations.
+
+\section{Problem 2}
+The problem states:
+\begin{center}
+'Write the number 2000 as a sum of distinct Fibonacci numbers in as many different ways as possible, while adhering to the restriction that the summands must appear in increasing order in the representing sum, and that no two numbers that are consecutive in the sequence of Fibonacci numbers both appear in this sum.'
+\end{center}
+The Fibonacci numbers less than 2000 are:
+\begin{center}
+0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597
+\end{center}
+In this problem, we are given an addition restriction, that is, no two numbers that are consecutive in the sequence of Fibonacci numbers both appear in this sum. Combining this fact with the same methods and generalizations as before, we can compile a list:
+\begin{itemize}
+    \item 5 + 21 + 377 + 1597
+\end{itemize}
+The second restriction really limits the amount of cases we can create, as our trick for creating more summmands in problem 1 was to break down a number into a sum of the previous two Fibonacci numbers. However, this is not possible as then there would be two consecutive numbers in the sum, contradicting the origianlly posed restriction.
+
+\section{Problem 3}
+The problem states:
+\begin{center}
+'Determine if the phenomenon in the second task is more pervasive in representing other three or higher digit numbers by checking four more numbers.'
+\end{center}
+Let's check the numbers 300, 500, 1200, and 1700:
+\begin{itemize}
+    \item 300 = 233 + 55 + 8 + 3 + 1
+    \item 500 = 377 + 89 + 34
+    \item 1200 = 987 + 144 + 55 + 13 + 1
+    \item 1700 = 1597 + 89 + 13 + 1
+\end{itemize}
+Yes, the restrictions given in the second task are more effective (i.e., unique) in representing numbers. The first task allowed for the decomposition of summands into the two Fibonacci numbers that represent it, essentially creating slightly altered duplicates. The removal of this ability limited the number of cases that can be used to represent the number.
+
+\section{Problem 4}
+The problem states:
+\begin{center}
+'Formulate a conjecture about the phenomena emerging from these experiments.'
+\end{center}
+My conjecture is the following: 'Any positive integer can be uniquely represented as a sum of distinct Fibonacci numbers as long as the summands are not consecutive.'
+
+\section{Problem 5}
+The problem states:
+\begin{center}
+'Consult [GENERALIZED ZECKENDORF THEOREM] on the status of your conjecture. Is your conjecture related to the content of this paper?'
+\end{center}
+Yes, my conjecture is related to the content of this paper. The conjecture is known as the Zeckendorf Theorem.
+
+\section{Problem 6}
+The problem states:
+\begin{center}
+'Attempt to prove the statement in the first sentence of that paper. If you get stuck, explain what your proof strategy is, and what the obstruction is to carrying it out.'
+\end{center}
+We want to show that "every positive integer can be uniquely represented as the sum of distinct Fibonacci numbers if no two consecutive Fibonacci numbers are used in any given sum." In order to do so we will first prove the existence of representation for every positive integer exists, and then we will prove that no positive integer has two different representations.
+
+\textbf{Part 1: Existence}\\
+\textbf{WTF}: Every positive integer has such a representation \\
+We will prove this statement using strong induction.\\
+\textbf{Base case}: For positive integer $n$ = 1, 2, 3, such a representation exists, namely $n$ itself. In the case of $n$ = 4, we have the representation 1 + 3. \\
+\textbf{Induction hypothesis}: Assume $n \leq k$ has a representation. \\
+\textbf{Induction step}: Show that $k+1$ has a representation. \\
+\textbf{Case a:} If $k+1$ is a Fibonacci number, then it has a representation, namely $k+1$, and we are done. \\
+\textbf{Case b:} Else, there exists Fibonacci numbers $F_{j}$ and $F_{j+1}$ such that $F_{j} < k+1 < F_{j+1}$. Let $x = k+1 - F_{j}$. By the induction hypothesis, x has a representation since it is less than or equal to $k$.\\
+If we rewrite $x = k+1 - F_{j}$ we get $x + F_{j} = k+1$. The LHS is less than $F_{j+1}$ which is equal to $F_{j} + F_{j-1}$. Thus we get $x + F_{j} < F_{j} + F_{j-1}$, or $x < F_{j-1}$. Since $x < F_{j-1}$, it's representation does not include $F_{j-1}$. Therefore, the representation of $k+1$ is equal to $x + F_{j}$, as the representation does not include $F_{j-1}$, which would contradict the fact that the representations cannot have consecutive Fibonacci terms in the summation.
+\\\\
+\textbf{Part 2: Uniqueness}\\
+\textbf{WTS}: Every positive integer has only one such representation \\
+We will prove this statement using contradiction. \\
+Assume not. Then there exists two representations of a number $n$. Denote these representations as $R_{1}$ and $R_{2}$. Let $R_{1}'$ and $R_{2}'$ denote their respective summations where common terms between $R_{1}$ and $R_{2}$ are removed. Thus, $R_{1}'$ and $R_{2}'$ do not share any common terms. Note that $\sum {R_{1}'}$ and $\sum {R_{2}'}$ are equal. \\
+\textbf{Case a:} WLOG, let $R_{1}'$ be empty. However, since $\sum {R_{1}'}$ and $\sum {R_{2}'}$ are equal, $R_{2}'$ would also have to be empty. However, that would make $R_{1}$ and $R_{2}$ equal as that would mean they have the exact same summands. Thus, $R_{1}'$ and $R_{2}'$ are both non-empty.\\
+Now we have shown that $R_{1}'$ and $R_{2}'$ are non-empty. Let $X$ and $Y$ be the largest values in $R_{1}$ and $R_{2}$. We know that $X$ is not equal to $Y$ because $R_{1}$ and $R_{2}$ contain no common elements. WLOG let $X < Y$.
+\\\\
+** From here I was not sure how to complete my proof. I had an intuition from problem (1) that the summation of the Fibonacci numbers before a certain Fibonacci number is less than the number itself (or at least, the summation of non-consecutive numbers). However, I am not sure how to prove this statement, as it was more of an intuition/hunch that I used to formulate my proof attempt. I believe that a formulate proof of the previous statement would lead me on the right path to proving. My original plan was to do some rearranging and substitution of the terms so that the proof would eventually arrive at a contradiction of the statement that $\sum {R_{1}'}$ and $\sum {R_{2}'}$ are equal, thus proving uniqueness.
+
+
+\end{document}
