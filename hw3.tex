@@ -1,0 +1,186 @@
+\documentclass[12pt]{article}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textwidth}{6.5in}
+\setlength{\parindent}{0in}
+\setlength{\parskip}{\baselineskip}
+\setlength{\headsep}{3pt}
+
+\usepackage{amsmath,amsfonts,amssymb}
+
+\title{Homework 3}
+
+\begin{document}
+
+Elena Yang \\
+Homework 3 \\
+Math 305 \\
+October 8, 2020
+
+\hrulefill
+
+\section{Problem 1 - Exercise A, page 29}
+The problem states:
+\begin{center}
+Prove that each of the following sets, with the indicated operation, is an Abelian group:
+\end{center}
+To determine if the following sets are an Abelian group, we need to determine if they are commutatitve, associative, have an identity element, and have an inverse.
+\subsection{Subproblem 1}
+\begin{center}
+$x * y = x + y + k$, (k a fixed constant), on the set ${\rm I\!R}$ of the real numbers
+\end{center}
+1. Is the operative is commutative?\\
+$x*y=x+y+k$ and $y*x=y+x+k$. 
+\\$x*y$ and $y*x$ are equal to each other. 
+\\Thus the operation is commutative.
+
+2. Is the operation is associative?\\
+We check if $(x*y)*z=x*(y*z)$\\
+$(x*y)*z=(x+y+k)*z=x+y+z+2k$\\
+$x*(y*z)=x*(y+z+k)=x+y+z+2k$\\
+Thus the operation is associative.
+
+3. Does the operation have an identity element?\\
+We solve $x*e=x$ for $e$.\\
+$x+e+k=x$\\$e+k=0$\\$e=-k$\\
+Checking, we get:\\
+$x*-k=x+(-k)+k=x$\\
+Thus, $-k$ is the identity element.
+
+4. Does every element have an inverse?\\
+Solve $x*x'=-k$ for $x'$:\\
+$x*x'=x+x'+k=-k$\\
+$x'=-(x+2k)$\\
+Checking, we get:
+$-(x+2k)*x=-(x+2k)+x+k=-k$\\
+Thus, every element $x$ has an inverse, namely $-(x+2k)$.
+
+Therefore, this set and operation form an Abelian group.
+
+\subsection{Subproblem 2}
+\begin{center}
+$x * y = \frac{xy}{2}$, on the set \{x $\in {\rm I\!R} :x \neq$ -1\}
+\end{center}
+1. Is the operative is commutative?\\
+$x*y=\frac{xy}{2}k$ and $y*x=\frac{yx}{2}$. 
+\\$x*y$ and $y*x$ are equal to each other by the commutativity of multiplication.
+\\Thus the operation is commutative.
+
+2. Is the operation is associative?\\
+We check if $(x*y)*z=x*(y*z)$\\
+$(x*y)*z=\frac{xy}{2}*z=\frac{xyz}{4}$\\
+$x*(y*z)=x*\frac{yz}{2}=\frac{xyz}{4}$\\
+Thus the operation is associative.
+
+3. Does the operation have an identity element?\\
+We solve $x*e=x$ for $e$.\\
+$\frac{xe}{2}=e$\\$xe=2e$\\$x=2$\\
+Checking, we get:\\
+$x*2=\frac{2x}{2}=x$\\
+Thus, $2$ is the identity element.
+
+4. Does every element have an inverse?\\
+Solve $x*x'=2$ for $x'$:\\
+$\frac{xx'}{2}=2$, so $xx'=4$ and $x'=\frac{4}{x}$\\
+Checking, we get:
+$4*x=\frac{4x}{2x}=2$\\
+Thus, every element $x$ has an inverse, namely $\frac{4}{x}$.
+
+Therefore, this set and operation form an Abelian group.
+
+\section{Problem 2 - Exercise C, page 30}
+We are given that $A+B=(A-B)\cup(B-A)$. This is defined as the symmetric difference of sets $A$ and $B$. We are shown that + is associative and commutative.\\
+We also let $P_D=\{A:A\subseteq D\}$
+\subsection{Subproblem 1}
+The problem states:
+\begin{center}
+Prove that there is an identity element with respect to the operation +.
+\end{center}
+We solve $A+e=A$ for $e$.\\
+$(A-e)\cup(e-A)=A\cup e=A$\\
+Thus $e$ is the empty set, so the empty set is the identity element.
+
+\subsection{Subproblem 2}
+The problem states:
+\begin{center}
+Prove every subset $A$ of $D$ has an inverse with respect to +, which is.... \\Thus, $\langle P_D,+ \rangle$ is a group!
+\end{center}
+Solve $A*A'=\varnothing$ for $A'$:\\
+$(A-A')\cup(A'-A)=\varnothing$ when $A=A'$\\
+Thus, each set is its own inverse.
+
+\subsection{Subproblem 3}
+The problem states:
+\begin{center}
+Let $D$ be the three-element set D = \{a,b,c\}. List the elements of $P_D$. (For example, one element is $\{a\}$, another is $\{a,b\}$, and so on. Do not forget the empty set and the whole set. D.) Then write the operation table for $\langle P_D,+ \rangle$.
+\end{center}
+The elements of $P_D$ are:\\
+$\varnothing,\{a\},\{b\},\{c\},\{a,b\},\{a,c\},\{b,c\},\{a,b,c\}$\\\\
+The operation table is:\\
+
+\begin{center}
+\renewcommand\arraystretch{1.3}
+\setlength\doublerulesep{0pt}
+\begin{tabular}{r||*{9}{2|}}
++ & $\varnothing$ & \{a\} & \{b\} & \{c\} & \{a,b\} & \{a,c\} & \{b,c\} & \{a,b,c\} \\
+\hline\hline
+$\varnothing$ & $\varnothing$ & \{a\} & \{b\} & \{c\} & \{a,b\} & \{a,c\} & \{b,c\} & \{a,b,c\} \\
+\hline
+\{a\} & \{a\} & $\varnothing$ & \{a,b\} & \{a,c\} & \{b\} & \{c\} & \{a,b,c\} & \{b,c\} \\
+\hline
+\{b\} & $\varnothing$ & \{a,b\} & $\varnothing$ & \{b,c\} & \{b\} & \{a,b,c\} & \{c\} & \{a,c\} \\
+\hline
+\{c\} & \{c\} & \{a,c\} & \{b,c\} & $\varnothing$ & \{a,b,c\} & \{a\} & \{b\} & \{a,b\} \\
+\hline
+\{a,b\} & \{a,b\} & \{b\} & \{a\} & \{a,b,c\} & $\varnothing$ & \{b,c\} & \{a,c\} & \{c\} \\
+\hline
+\{a,c\} & \{a,c\} & \{c\} & \{a,b,c\} & \{a\} & \{b,c\} & $\varnothing$ & \{a,b\} & \{b\} \\
+\hline
+\{b,c\} & \{b,c\} & \{a,b,c\} & \{c\} & \{b\} & \{a,c\} & \{a,b\} & $\varnothing$ & \{a\} \\
+\hline
+\{a,b,c\} & \{a,b,c\} & \{b,c\} & \{a,c\} & \{a,b\} & \{c\} & \{b\} & \{a\} & $\varnothing$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\section{Problem 3 - Exercise A, page 48}
+Determine where or not $H$ is a subgroup of $G$. (Assume that the operation of $H$ is the same as that of $G$.)
+\subsection{Subproblem 1}
+The problem states:
+\begin{center}
+$G=\langle \rm I\!R,+\rangle, H=\{\log a : a \in \mathbb{Q}, a>0\}$\\
+H is or is not a subgroup of G?
+\end{center}
+We check both conditions to see if the definition of a 'subgroup' is satisfied. These conditions are closed with respect to addition, and closed with respect to the negative.\\
+1. Is it closed with respect to addition?\\
+For $a,b \in \mathbb{Q}^+$, let $\log(a)=x$ and $\log(b)=y$. Then, $x+y=\log(a)+\log(b)=\log(ab)$. Since $a,b \in \mathbb{Q}^+$, $ab \in \mathbb{Q}^+$ as well. So, $x+y \in H$. Thus, $H$ is closed under addition.\\
+2. Is it closed with respect to the negative?\\
+For $a \in \mathbb{Q}^+$, let $x=\log(a)$. Then, $-x=\log(\frac{1}{a})$. Since $a \in \mathbb{Q}^+$, $\frac{1}{a} \in \mathbb{Q}^+$, $-x \in H$. Thus, H is closed with respect to the negative.
+\subsection{Subproblem 3}
+\begin{center}
+$G=\langle \rm I\!R,+\rangle, H=\{x\in\mathbb{R}:\tan x \in \mathbb{Q}\}$\\
+H is or is not a subgroup of G?
+\end{center}
+We note that $H$ contains elements of the form $\tan(x)$ for $x \in \mathbb{R}$. This value is undefined when $x=\frac{\pi}{2}$.\\
+Use this and let $x=\frac{\pi}{4}$. Then, $\tan(x)=\tan(\frac{\pi}{4})=1 \in \mathbb{Q}$. However, $x+x=\frac{\pi}{2}$, and $\tan\frac{\pi}{2}$ is undefined. Thus, $H$ is NOT closed under addition, and further is not a subgroup of $G$.
+
+\section{Problem 4 - Exercise B, page 49}
+Show that $H$ is a subgroup of $G$.\mathcal{F}(\mathbb{R}) represents the set of all functions from \mathbb{R} to \mathbb{R}, that is, the set of all real-valued functions of a real variable.
+\subsection{Subproblem 2}
+\begin{center}
+$G=\langle \mathcal{F}(\mathbb{R}),+\rangle, H=\{f \in \mathcal{F}(\mathbb{R}):f(-x)=-f(x)\}$
+\end{center}
+We check both conditions to see if the definition of a 'subgroup' is satisfied. These conditions are closed with respect to addition, and closed with respect to the negative.\\
+1. Is it closed with respect to addition?\\
+Suppose $f, g \in H$; then $f(-x)=-f(x)$ and $g(-x)=-g(x)$, and $[f+g](-x)=f(-x)+g(-x)=-f(x)-g(x)$, so $H$ is closed under addition.\\
+2. Is it closed with respect to the negative?\\
+If $f \in H$, then f(x)=f(-x)=-f(x). Thus, $H$ is closed with respect to the negative.
+\subsection{Subproblem 6}
+\begin{center}
+$G=\langle \mathcal{F}(\mathbb{R}),+\rangle, H=\{f \in \mathcal{F}(\mathbb{R}):f(x)\in\mathbb{Z}$ for every x $\in \mathbb{R}\}$
+\end{center}
+1. Is it closed with respect to addition?\\
+Suppose $f,g \in H$, then for any $x \in \mathbb{R}, f(x),g(x) \in \mathbb{Z}$. Thus, $[f+g](x)=f(x)+g(x) \in \mathbb{Z}$ as $\mathbb{Z}$ is closed under addition. So $[f+g] \in H$, and $H$ is closed with respect to addition. \\
+2. Is it closed with respect to the negative?\\
+Suppose $f \in H$, then for any $x \in \mathbb{R}, p(x) \in \mathbb{Z}$. Since $p(x) \in \mathbb{Z}, -p(x) \in \mathbb{Z}$ since the integers are closed under multiplication. Thus, $-p \in H$ and $H$ is closed with respect to the negative. 
+\end{document}
